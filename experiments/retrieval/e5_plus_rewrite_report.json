@@ -1,0 +1,40 @@
+{
+  "tier": "plus_rewrite",
+  "storage": "in-process numpy cosine (bge-m3)",
+  "max_seq_len": 512,
+  "metrics": {
+    "ndcg@10": 0.5153,
+    "recall@10": 0.7225,
+    "recall@1": 0.2858,
+    "mrr@10": 0.4751,
+    "hit_rate@10": 0.78,
+    "precision@5": 0.152
+  },
+  "dataset_scale": {
+    "corpus": 6221,
+    "queries": 200,
+    "qrels": 200
+  },
+  "stages": [
+    "dense",
+    "dynamic_topk",
+    "llm_multi_query",
+    "rrf"
+  ],
+  "rewriter": "QueryRewriter.plan_variants(use_llm=True)",
+  "fusion": "RRF 多路等权 k=60",
+  "meter": {
+    "calls": 281,
+    "prompt_tokens": 54014,
+    "completion_tokens": 149038,
+    "by_model": {
+      "deepseek": {
+        "calls": 281,
+        "in": 54014,
+        "out": 149038
+      }
+    },
+    "queries": 200,
+    "calls_per_query": 1.405
+  }
+}

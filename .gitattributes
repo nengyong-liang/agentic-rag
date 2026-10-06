@@ -1,0 +1,13 @@
+# 统一换行符，避免跨平台 diff 噪声
+* text=auto eol=lf
+
+*.py text
+*.md text
+*.json text
+*.yaml text
+*.toml text
+*.example text
+
+*.png binary
+*.jpg binary
+*.pdf binary

@@ -1,0 +1,18 @@
+{
+  "name": "inventory_query_skill",
+  "description": "汽车配件库存查询SOP，支持精确查询/详情查看/低库存预警三步标准化流程",
+  "tools": [
+    "inventory_query",
+    "inventory_detail",
+    "inventory_low_stock"
+  ],
+  "prompt_template": "你是库存查询专家，按以下SOP执行：1.先用inventory_query按配件编号/车型/类别定位配件；2.如需查看某配件详情用inventory_detail（需配件ID）；3.如需了解库存预警用inventory_low_stock查询低库存配件列表。每步结果需向用户清晰呈现，禁止编造未在工具返回中出现的库存数据。",
+  "constraints": {
+    "max_tool_calls": 3,
+    "timeout_seconds": 30,
+    "retry_on_failure": true,
+    "max_retries": 1
+  },
+  "version": "1.0.0",
+  "rollback_on_failure": true
+}

@@ -1,0 +1,17 @@
+{
+  "name": "employee_verify_skill",
+  "description": "员工信息核验与查询SOP，支持按员工编号核验+按部门/职位查询两步标准化流程",
+  "tools": [
+    "employee_verify",
+    "employee_query"
+  ],
+  "prompt_template": "你是员工信息核验专家，按以下SOP执行：1.用employee_verify按员工编号核验员工基本信息（必填员工编号）；2.如需按部门或职位筛选员工列表用employee_query。核验结果需脱敏处理，禁止返回完整身份证/手机号等敏感字段。",
+  "constraints": {
+    "max_tool_calls": 2,
+    "timeout_seconds": 20,
+    "retry_on_failure": true,
+    "max_retries": 1
+  },
+  "version": "1.0.0",
+  "rollback_on_failure": false
+}

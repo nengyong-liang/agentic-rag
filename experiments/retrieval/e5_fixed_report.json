@@ -1,0 +1,22 @@
+{
+  "tier": "fixed",
+  "storage": "in-process numpy cosine (bge-m3)",
+  "max_seq_len": 512,
+  "metrics": {
+    "ndcg@10": 0.5043,
+    "recall@10": 0.7142,
+    "recall@1": 0.2733,
+    "mrr@10": 0.4563,
+    "hit_rate@10": 0.775,
+    "precision@5": 0.152
+  },
+  "dataset_scale": {
+    "corpus": 6221,
+    "queries": 200,
+    "qrels": 200
+  },
+  "top_k": 10,
+  "stages": [
+    "dense"
+  ]
+}

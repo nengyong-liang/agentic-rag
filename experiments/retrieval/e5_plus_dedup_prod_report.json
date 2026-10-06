@@ -1,0 +1,33 @@
+{
+  "tier": "plus_dedup_prod",
+  "storage": "in-process numpy cosine (bge-m3)",
+  "max_seq_len": 512,
+  "metrics": {
+    "ndcg@10": 0.4577,
+    "recall@10": 0.5842,
+    "recall@1": 0.2733,
+    "mrr@10": 0.434,
+    "hit_rate@10": 0.64,
+    "precision@5": 0.143
+  },
+  "dataset_scale": {
+    "corpus": 6221,
+    "queries": 200,
+    "qrels": 200
+  },
+  "stages": [
+    "dense",
+    "dynamic_topk",
+    "diversity_rerank(prod-fixed)"
+  ],
+  "diversity_threshold": 0.85,
+  "pool": "dynamic_top_k (10 for fuzzy)",
+  "final_k": "dynamic_rerank_top_k (5 for fuzzy)",
+  "note": "对齐 §2.27 修复后的 retrieve()",
+  "p4_stats": {
+    "queries": 0,
+    "filtered_queries": 0,
+    "filter_rate": null,
+    "avg_out_len": null
+  }
+}

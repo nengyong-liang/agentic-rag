@@ -1,0 +1,26 @@
+{
+  "tier": "plus_dedup_pool",
+  "storage": "in-process numpy cosine (bge-m3)",
+  "max_seq_len": 512,
+  "metrics": {
+    "ndcg@10": 0.479,
+    "recall@10": 0.6492,
+    "recall@1": 0.2733,
+    "mrr@10": 0.4431,
+    "hit_rate@10": 0.715,
+    "precision@5": 0.143
+  },
+  "dataset_scale": {
+    "corpus": 6221,
+    "queries": 200,
+    "qrels": 200
+  },
+  "stages": [
+    "dense",
+    "dynamic_topk",
+    "diversity_rerank(pool)"
+  ],
+  "diversity_threshold": 0.85,
+  "pool": 20,
+  "note": "修好接线版；生产版因 len==top_k 早退 → 见 RAG-01"
+}

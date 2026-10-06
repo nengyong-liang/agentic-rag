@@ -1,0 +1,24 @@
+{
+  "tier": "plus_dedup",
+  "storage": "in-process numpy cosine (bge-m3)",
+  "max_seq_len": 512,
+  "metrics": {
+    "ndcg@10": 0.5025,
+    "recall@10": 0.7092,
+    "recall@1": 0.2733,
+    "mrr@10": 0.4555,
+    "hit_rate@10": 0.77,
+    "precision@5": 0.152
+  },
+  "dataset_scale": {
+    "corpus": 6221,
+    "queries": 200,
+    "qrels": 200
+  },
+  "stages": [
+    "dense",
+    "dynamic_topk",
+    "diversity_rerank"
+  ],
+  "diversity_threshold": 0.85
+}

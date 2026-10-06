@@ -1,0 +1,26 @@
+{
+  "tier": "plus_reranker",
+  "storage": "in-process numpy cosine (bge-m3)",
+  "max_seq_len": 512,
+  "metrics": {
+    "ndcg@10": 0.5399,
+    "recall@10": 0.7092,
+    "recall@1": 0.3442,
+    "mrr@10": 0.5151,
+    "hit_rate@10": 0.77,
+    "precision@5": 0.149
+  },
+  "dataset_scale": {
+    "corpus": 6221,
+    "queries": 200,
+    "qrels": 200
+  },
+  "stages": [
+    "dense",
+    "dynamic_topk",
+    "diversity_rerank",
+    "cross_encoder_rerank"
+  ],
+  "rerank_model": "BAAI/bge-reranker-base",
+  "rerank_pool": 10
+}

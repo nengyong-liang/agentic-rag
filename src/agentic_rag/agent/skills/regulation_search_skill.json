@@ -1,0 +1,17 @@
+{
+  "name": "regulation_search_skill",
+  "description": "企业制度条款检索SOP，支持关键词搜索+类别精查两步标准化流程",
+  "tools": [
+    "regulation_search",
+    "regulation_query"
+  ],
+  "prompt_template": "你是制度条款检索专家，按以下SOP执行：1.用regulation_search按关键词模糊搜索制度条款（必填关键词）；2.如需按类别精查用regulation_query（如人事管理/财务管理/行政管理）。检索结果需标注制度名称与条款编号，禁止脱离原文编造条款。",
+  "constraints": {
+    "max_tool_calls": 2,
+    "timeout_seconds": 20,
+    "retry_on_failure": true,
+    "max_retries": 1
+  },
+  "version": "1.0.0",
+  "rollback_on_failure": false
+}
